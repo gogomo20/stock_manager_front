@@ -1,0 +1,16 @@
+.stk-login {
+    height: 100%;
+    background-color: blue;
+    padding: 40px 80px;
+    .login-content{
+        background-color: white;
+        border-radius: 15px;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        .login-form{
+            background-color: #084D6E;
+        }
+    }
+}
