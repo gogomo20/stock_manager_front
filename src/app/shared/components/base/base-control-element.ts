@@ -11,28 +11,32 @@ export class BaseControlElement<T> {
         if(validators){
             this.validators = validators;
             this._formControl.setValidators(this.validators);
+            this.value = null;
         }
     }
-    private _formControl: FormControl = new FormControl({});
+    private _formControl: FormControl = new FormControl();
     private _formGroup?: FormGroup;
     private _validatorMap: Map<string, (prop: any) => string> = new Map<string, (prop: any) => string>();
     get value(): T{
         return this._formControl.value;
     }
-    set value(value: T){
+    set value(value: T | null){
         this._formControl.setValue(value);
     }
     get control(): FormControl{
       return this._formControl;
     }
 
-    setRequired(message: string): BaseControlElement<T>{
+    setRequired(message: string) {
         this.validators.push(Validators.required);
         this._formControl.setValidators(this.validators);
         this._validatorMap.set('required', () => message);
         return this;
     }
-    addValidation(validator: ValidatorFn, message: string): BaseControlElement<T>{
+    isRequired(): boolean {
+        return this.validators.some(x => x.name === 'required');
+    }
+    addValidation(validator: ValidatorFn, message: string) {
       this.validators.push(validator);
       this._formControl.setValidators(this.validators);
       return this;
@@ -44,5 +48,8 @@ export class BaseControlElement<T> {
     setFormGroup(formGroup: FormGroup): BaseControlElement<T>{
         this._formGroup = formGroup;
         return this;
+    }
+    showError(): boolean {
+        return !!this.control.errors;
     }
 }

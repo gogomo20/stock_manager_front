@@ -8,6 +8,6 @@ export class InputElement extends BaseControlElement<string>{
     super(label, name, validators)
     this.placeHolder = placeholder;
   }
-
+  
 }
 

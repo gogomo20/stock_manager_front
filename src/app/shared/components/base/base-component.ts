@@ -10,7 +10,9 @@ export class BaseControlComponent<T extends BaseControlElement<any>> implements 
   ngOnInit(): void {
     if(!!this.element && !!this.formGroup){
       this.element.setFormGroup(this.formGroup);
-      this.element.control.valueChanges.subscribe(value => this.onChange.emit(value));
+      this.element.control.valueChanges.subscribe(value => {
+        this.onChange.emit(value)
+      });
     }
   }
 }

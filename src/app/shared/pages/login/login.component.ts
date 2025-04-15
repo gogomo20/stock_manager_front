@@ -3,6 +3,7 @@ import { Component, OnInit } from "@angular/core";
 import { SharedModule } from "../../shared.module";
 import { InputElementFactory } from "../../components/input/structure/input.factory";
 import { InputElement } from "../../components/input/structure/input.element";
+import { FormGroup } from "@angular/forms";
 
 @Component({
     selector: 'stk-login',
@@ -11,11 +12,11 @@ import { InputElement } from "../../components/input/structure/input.element";
     imports: [CommonModule,SharedModule]
 })
 export class STKLoginComponent implements OnInit {
-  username: InputElement;
-  password: InputElement;
+  username:InputElement = InputElementFactory.create('Usuário', 'username', 'Por favor insira seu usuário').setRequired('Campo obrigatório');
+  password:InputElement = InputElementFactory.createPassword('Senha', 'password', 'Por favor insira sua senha').setRequired('Campo obrigatório');
+  
+  form = new FormGroup({});
   constructor(){
-    this.username = InputElementFactory.create('Usuário', 'username', 'Por favor insira seu usuário').setRequired('Campo obrigatório');
-    this.password = InputElementFactory.createPassword('Senha', 'password', 'Por favor insira sua senha').setRequired('Campo obrigatório');
   }
 
   ngOnInit(): void {

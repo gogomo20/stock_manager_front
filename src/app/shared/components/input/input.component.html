@@ -1,7 +1,16 @@
 <div class="stk-input">
-    <label>{{element?.label}}</label>
-    <input type="text" [placeholder]="element?.placeHolder">
-    <div class="error-message">
-
+    <label
+        [htmlFor]="element?.name"
+        [ngClass]="{'required': element?.isRequired()}"
+    >{{element?.label}}</label>
+    <input
+        [id]="element?.name"
+        [name]="element?.name"
+        [type]="element?.type ?? 'text'"
+        [placeholder]="element?.placeHolder"
+        [formControl]="getControl()"
+    >
+    <div class="error-message" *ngIf="element?.showError()">
+        contem erros
     </div>
 </div>

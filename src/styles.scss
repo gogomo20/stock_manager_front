@@ -8,16 +8,18 @@
 body{
     height: 100vh;
 }
-$border-color: #DDDDDD;
-$font-color: #333333;
-$font-color-light: #E2E2E2;
-$success-color: #66BB6A;
-$primary-color: #42A5F5;
-$error-color: #EF5350;
-$warning-color: #FFEE58;
+:root{
+  --border-color: #DDDDDD;
+  --font-color: #333333;
+  --font-color-light: #E2E2E2;
+  --success-color: #66BB6A;
+  --primary-color: #42A5F5;
+  --error-color: #EF5350;
+  --warning-color: #FFEE58;
+}
 
 .text-title{
-  color: $font-color;
+  color: var(--font-color);
   font-size: 30px;
   font-weight: semi-bold;
 }

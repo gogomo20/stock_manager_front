@@ -3,11 +3,16 @@
         <div class="logo-content col-6">
         </div>
         <div class="login-form col-6">
-            <div class="content">
+            <div class="content col-12" style="max-width: 520px;">
               <div class="text-title">
                 Seja bem vindo
               </div>
-              <stk-input [element]="password" />
+              <div class="col-12">
+                <stk-input [element]="username" [formGroup]="form" />
+              </div>
+              <div class="col-12">
+                <stk-input [element]="password" [formGroup]="form" />
+              </div>
             </div>
         </div>
     </div>
