@@ -1,0 +1,8 @@
+<div class="stk-alert" *ngIf="!!params">
+  <div [ngClass]="['alert', params.type]" *ngIf="!!params">
+    <span class="material-symbols-outlined" *ngIf="!!params.icon">
+      {{params.icon}}
+    </span>
+    {{params.message}}
+  </div>
+</div>

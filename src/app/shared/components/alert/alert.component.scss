@@ -1,0 +1,35 @@
+.stk-alert{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  padding: 20px;
+  transform: translateX(-100%);
+  .alert{
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+  }
+  .success{
+    background-color: var(--success-color-light);
+    color: var(--font-color-success);
+  }
+  .error{
+    background-color: var(--error-color-light);
+    color: var(--font-color-error);
+  }
+  .warning{
+    background-color: var(--warning-color-light);
+    color: var(--font-color-warning);
+  }
+  .primary{
+    background-color: var(--primary-color-light);
+    color: var(--font-color-primary);
+  }
+  .secondary{
+    background-color: var(--secondary-color-light);
+    color: var(--font-color-secondary);
+  }
+}

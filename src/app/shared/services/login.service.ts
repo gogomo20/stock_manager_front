@@ -12,7 +12,10 @@ export class LoginService {
     constructor(
         private readonly httpClient: HttpClient
     ){}
-    public logIn(params: ILogin) {
+    public logIn(params: any) {
         return this.httpClient.post<IGenericResponse<IAuthResponse>>(`${environment.API_URL}/api/v1/auth/login`, params);
+    }
+    public setToken(token: string) {
+      localStorage.setItem('token', token);
     }
 }
