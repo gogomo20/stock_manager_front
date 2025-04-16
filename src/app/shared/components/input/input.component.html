@@ -10,7 +10,8 @@
         [placeholder]="element?.placeHolder"
         [formControl]="getControl()"
     >
-    <div class="error-message" *ngIf="element?.showError()">
-        contem erros
+    <div [ngClass]="{'active': element?.showError(), 'error-message': true}">
+        {{element?.getErrorMessage()}}
     </div>
+    
 </div>

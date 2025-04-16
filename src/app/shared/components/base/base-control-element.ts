@@ -16,7 +16,7 @@ export class BaseControlElement<T> {
     }
     private _formControl: FormControl = new FormControl();
     private _formGroup?: FormGroup;
-    private _validatorMap: Map<string, (prop: any) => string> = new Map<string, (prop: any) => string>();
+    private _validatorMap: Map<string, () => string> = new Map<string, () => string>();
     get value(): T{
         return this._formControl.value;
     }
@@ -47,9 +47,18 @@ export class BaseControlElement<T> {
     }
     setFormGroup(formGroup: FormGroup): BaseControlElement<T>{
         this._formGroup = formGroup;
+        this._formGroup.addControl(this.name, this._formControl);
         return this;
     }
     showError(): boolean {
-        return !!this.control.errors;
+        return !!this.control.errors && this.control.touched;
+    }
+    getErrorMessage(): string {
+        if(!this.control.errors){
+            return '';
+        }
+        var error = Object.keys(this.control.errors)[0];
+        const message = this._validatorMap.get(error);
+        return !!message ? message() : error;
     }
 }

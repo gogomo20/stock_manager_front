@@ -13,12 +13,21 @@
     }
     .required::after{
         content: ' *';
-        color: var(--error-color);
+        color: var(--font-color-red);
     }
     input{
         width: 100%;
         padding: 10px 20px;
         border-radius: 10px;
         border: 1px solid var(--border-color);
+    }
+    .error-message{
+        color: transparent;
+        font-size: 14px;
+        height: 20px;
+        transition: all 0.3s ease-in;
+    }
+    .error-message.active{
+        color: var(--font-color-red);
     }
 }
