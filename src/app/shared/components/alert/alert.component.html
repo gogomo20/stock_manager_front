@@ -1,8 +1,8 @@
-<div class="stk-alert" *ngIf="!!params">
-  <div [ngClass]="['alert', params.type]" *ngIf="!!params">
-    <span class="material-symbols-outlined" *ngIf="!!params.icon">
-      {{params.icon}}
+<div class="stk-alert" *ngIf="!!alerts.length">
+  <div *ngFor="let alert of alerts" [ngClass]="['alert', alert.type]">
+    <span class="material-symbols-outlined" *ngIf="!!alert.icon">
+      {{alert.icon}}
     </span>
-    {{params.message}}
+    {{alert.message}}
   </div>
 </div>

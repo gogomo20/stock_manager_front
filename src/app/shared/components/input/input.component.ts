@@ -10,10 +10,17 @@ import { FormControl } from "@angular/forms";
     styleUrls: ['./input.component.scss']
 })
 export class STKInputComponent extends BaseControlComponent<InputElement> {
+  
   getControl(){
     if(this.element){
       return this.element.control;
     }
     return new FormControl('');
   }
+  showPassword(){
+    if(this.element){
+      this.element.type = this.element?.type === 'password' ? 'text' : 'password';
+    }
+  }
+
 }

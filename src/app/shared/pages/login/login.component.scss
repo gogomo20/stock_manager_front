@@ -31,4 +31,15 @@
           }
         }
     }
+    .logo-content{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      .description{
+        font-size: 30px;
+        color: var(--font-color-light);
+      }
+    }
 }

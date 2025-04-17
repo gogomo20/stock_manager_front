@@ -9,21 +9,20 @@ import { AlertService } from "../../services/alert.service";
   standalone: false
 })
 export class STKAlertComponent implements OnInit {
-  params?: IAlert;
-  timer?: number;
+  alerts: IAlert[] = [];
   constructor(
     private readonly alertService: AlertService
   ) {}
   ngOnInit(): void {
     this.alertService.getAlert().subscribe((params: IAlert) => {
-      this.params = params;
-      this.resetTimer();
+      this.alerts.push(params);
+      setTimeout(() => {
+        this.alerts = this.alerts.filter(alert => alert !== params);
+        if(this.alerts.length === 0){
+          this.alertService.clearIds();
+        }
+      }, 3000);
     });
   }
 
-  resetTimer() {
-    if(!!this.timer)
-      window.clearTimeout(this.timer);
-    this.timer = window.setTimeout(() => this.params = undefined, 3000);
-  }
 }

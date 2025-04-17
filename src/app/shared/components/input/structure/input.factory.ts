@@ -8,6 +8,7 @@ export class InputElementFactory {
   public static createPassword(label: string, name: string, placeholder: string, validators?: ValidatorFn[]): InputElement {
     const element = new InputElement(label, name, placeholder, validators);
     element.type = 'password';
+    element.isPassword = true;
     return element;
   }
 }

@@ -5,6 +5,7 @@
     flex-direction: column;
     gap: 5px;
     padding: 0;
+    position: relative;
     label{
         width: 100%;
         font-size: 14px;
@@ -30,4 +31,21 @@
     .error-message.active{
         color: var(--font-color-red);
     }
+    .input-content{
+        .eye-icon{
+            position: absolute;
+            left: 100%;
+            top: 63%;
+            transform: translate(-150%,-100%);
+            cursor: pointer;
+            color:transparent;
+            transition: all 0.3s ease-in;
+        }
+    }
+    .input-content:hover{
+        .eye-icon{
+            color: var(--font-color);
+        }
+    }
+    
 }
