@@ -1,0 +1,51 @@
+
+.stk-input{
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0;
+    position: relative;
+    label{
+        width: 100%;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--font-color);
+    }
+    .required::after{
+        content: ' *';
+        color: var(--font-color-red);
+    }
+    input{
+        width: 100%;
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: 1px solid var(--border-color);
+    }
+    .error-message{
+        color: transparent;
+        font-size: 14px;
+        height: 20px;
+        transition: all 0.3s ease-in;
+    }
+    .error-message.active{
+        color: var(--font-color-red);
+    }
+    .input-content{
+        .eye-icon{
+            position: absolute;
+            left: 100%;
+            top: 63%;
+            transform: translate(-150%,-100%);
+            cursor: pointer;
+            color:transparent;
+            transition: all 0.3s ease-in;
+        }
+    }
+    .input-content:hover{
+        .eye-icon{
+            color: var(--font-color);
+        }
+    }
+    
+}

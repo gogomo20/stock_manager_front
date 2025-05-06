@@ -1,0 +1,8 @@
+<div class="stk-alert" *ngIf="!!alerts.length">
+  <div *ngFor="let alert of alerts" [ngClass]="['alert', alert.type]">
+    <span class="material-symbols-outlined" *ngIf="!!alert.icon">
+      {{alert.icon}}
+    </span>
+    {{alert.message}}
+  </div>
+</div>

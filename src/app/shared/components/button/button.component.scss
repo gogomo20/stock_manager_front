@@ -1,0 +1,34 @@
+.stk-button{
+    width: 100% !important;
+    button{
+        width: 100%;
+        padding: 10px 20px;
+        font-size: 14px;
+        border-radius: 5px;
+        transition: all 0.1s ease-in;
+    }
+    button:hover{
+        cursor: pointer;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.575);
+    }
+    button:active{
+        cursor: pointer;
+        box-shadow: none;
+    }
+    button:disabled{
+        background-color: var(--secondary-color) !important;
+        color: #455A64 !important;
+        pointer-events: none;
+        opacity: 0.5;
+    }
+    
+    .success {
+        background-color: var(--success-color);
+        border: 1px solid var(--success-color);
+        color: var(--font-color-light);
+        
+    }
+    .success:active{
+        background-color: #43A047;
+    }
+}

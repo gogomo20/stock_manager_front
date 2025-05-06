@@ -1,0 +1,27 @@
+<div class="stk-login">
+    <div class="login-content">
+        <div class="logo-content col-6">
+          <img src="assets/logo.svg" alt="logo">
+          <div class="description">
+            Maestro Sistemas
+          </div>    
+        </div>
+        <div class="login-form col-6">
+            <div class="content col-12" style="max-width: 520px;">
+              <div class="text-title">
+                Seja bem vindo
+              </div>
+              <div class="col-12">
+                <stk-input [element]="username" [formGroup]="form" />
+              </div>
+              <div class="col-12">
+                <stk-input [element]="password" [formGroup]="form" />
+              </div>
+              <div class="col-12">
+                <stk-button [button]="buttonSend" />
+              </div>
+              <a>Esqueceu a senha?</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,22 @@
 <div class="stk-input">
-    <input type="text" [formControl]="control" [placeholder]="placeholder">
-    <div class="error-message">
-
+    <label
+        [htmlFor]="element?.name"
+        [ngClass]="{'required': element?.isRequired()}"
+    >{{element?.label}}</label>
+    <div class="input-content">
+        <input
+        [id]="element?.name"
+        [name]="element?.name"
+        [type]="element?.type ?? 'text'"
+        [placeholder]="element?.placeHolder"
+        [formControl]="getControl()"
+        >
+        <span class="eye-icon material-symbols-outlined" *ngIf="element?.isPassword" (click)="showPassword()">
+            {{element?.type == 'password' ? 'visibility' : 'visibility_off'}}
+        </span>
     </div>
+    <div [ngClass]="{'active': element?.showError(), 'error-message': true}">
+        {{element?.getErrorMessage()}}
+    </div>
+    
 </div>

@@ -1,0 +1,45 @@
+
+.stk-login {
+    height: 100%;
+    background-image: url('../../../../assets/background-login.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    .login-content{
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        .login-form{
+          background-color: #FFFFFF;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 0 50px;
+          .content{
+            max-width: 520px;
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+            align-items: center;
+            a{
+              cursor: pointer;
+              color: #29B6F6;
+              text-decoration: underline;
+            }
+          }
+        }
+    }
+    .logo-content{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      .description{
+        font-size: 30px;
+        color: var(--font-color-light);
+      }
+    }
+}
